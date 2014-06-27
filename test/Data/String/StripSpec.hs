@@ -13,3 +13,7 @@ spec = do
   describe "strip" $ do
     it "removes leading and trailing whitespace" $ do
       strip "\t  foo bar\n" `shouldBe` "foo bar"
+
+  describe "private" $ do
+    it "should be \"whatever\"" $ do
+      rstrip "  foo  " `shouldBe` "oof  "

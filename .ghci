@@ -1,4 +1,4 @@
-:set -isrc -itest
+:set -isrc -itest -DTEST
 
 -- for generated source files
 :set -idist/build/
