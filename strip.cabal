@@ -22,12 +22,11 @@ test-suite spec
   type:
       exitcode-stdio-1.0
   ghc-options:
-      -Wall
+      -Wall -fhpc
   hs-source-dirs:
-      test
+      src, test
   main-is:
       Spec.hs
   build-depends:
       base    == 4.*
-    , strip
-    , hspec   == 2.*
+    , hspec   >= 1.3
