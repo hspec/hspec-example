@@ -1,4 +1,4 @@
-name:             strip
+name:             example
 version:          0.0.0
 license:          MIT
 license-file:     LICENSE
@@ -8,15 +8,15 @@ maintainer:       Simon Hengel <sol@typeful.net>
 build-type:       Simple
 cabal-version:    >= 1.8
 
-library
+executable example
   ghc-options:
       -Wall
   hs-source-dirs:
-      src
-  exposed-modules:
-      Data.String.Strip
+      driver, src
+  main-is:
+      Main.hs
   build-depends:
-      base    == 4.*
+      base == 4.*
 
 test-suite spec
   type:
@@ -24,10 +24,10 @@ test-suite spec
   ghc-options:
       -Wall
   hs-source-dirs:
-      test
+      test, src
   main-is:
       Spec.hs
   build-depends:
       base    == 4.*
-    , strip
     , hspec   == 2.*
+    , silently
