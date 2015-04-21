@@ -19,7 +19,7 @@ $ cabal test
 and return code will indicate success or failure.  However, you won't get nice
 test output.
 
-## `runhaskel`
+## `runhaskell`
 
 If you want nice output you can use `runhaskell`:
 
