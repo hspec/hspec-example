@@ -8,7 +8,7 @@ First make sure that all dependencies are installed:
 $ cabal install --only-dependencies --enable-tests
 ```
 
-## `cabal`
+## `cabal` - monochrome output
 
 Just run
 
@@ -32,6 +32,17 @@ Alternatively, you can build and run the test suite manually:
 ```
 $ cabal configure --enable-tests --disable-optimization && cabal build && ./dist/build/spec/spec
 ```
+
+## `cabal repl` - colored output
+
+Run the specs with:
+
+```
+$ cabal repl test/Spec.hs
+*Main> :main
+```
+
+For reload see ghci bellow.
 
 ## `ghci`
 
