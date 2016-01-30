@@ -71,3 +71,11 @@ $ cabal exec ghci test/Spec.hs
 ```
 $ cabal exec -- runhaskell -isrc -itest test/Spec.hs
 ```
+
+## Stack
+
+To use `stack` to run your tests, you can simply run:
+
+```
+$ stack setup && stack test
+```
