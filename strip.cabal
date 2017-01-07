@@ -27,6 +27,8 @@ test-suite spec
       test
   main-is:
       Spec.hs
+  other-modules:
+      Data.String.StripSpec
   build-depends:
       base    == 4.*
     , strip
