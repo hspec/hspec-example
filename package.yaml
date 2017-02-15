@@ -1,0 +1,22 @@
+name: strip
+version: 0.0.0
+license: MIT
+copyright: (c) 2013 Simon Hengel
+author: Simon Hengel <sol@typeful.net>
+maintainer: Simon Hengel <sol@typeful.net>
+
+ghc-options: -Wall
+
+dependencies:
+ - base == 4.*
+
+library:
+  source-dirs: src
+
+tests:
+  spec:
+    source-dirs: test
+    main: Spec.hs
+    dependencies:
+      - strip
+      - hspec == 2.*
