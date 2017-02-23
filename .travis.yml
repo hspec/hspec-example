@@ -15,12 +15,20 @@ before_install:
   - export PATH=/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH
 
 install:
+  - curl -sSL https://github.com/sol/tinc/raw/master/get-tinc.sh | bash
+  - export PATH=$HOME/.tinc/bin:$PATH
+
+  - tinc --version
   - cabal --version
   - ghc --version
   - travis_retry cabal update
-  - cabal install --only-dependencies --enable-tests
+  - tinc
 
 script:
   - cabal configure --enable-tests --ghc-options=-Werror
   - cabal build
   - cabal test
+
+cache:
+  directories:
+    - $HOME/.tinc/cache
