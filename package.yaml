@@ -15,8 +15,7 @@ library:
 
 tests:
   spec:
-    source-dirs: test
-    main: Spec.hs
+    defaults: sol/hpack-defaults@e2f7990163fdbcfa884a9e3202664122f9f6cd24
     dependencies:
       - strip
       - hspec == 2.*
