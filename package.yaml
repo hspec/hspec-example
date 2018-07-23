@@ -15,8 +15,5 @@ library:
 
 tests:
   spec:
-    source-dirs: test
-    main: Spec.hs
-    dependencies:
-      - strip
-      - hspec == 2.*
+    defaults: hspec/hspec@master
+    dependencies: strip
