@@ -1,10 +1,10 @@
-cabal-version: >= 1.10
+cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.29.5.
+-- This file has been generated from package.yaml by hpack version 0.33.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0e0507078a401f6a0107021889ef4faa835ecabc74367befedd7d296baaca7eb
+-- hash: 4c8e84369d0009b342748184ffb522b887c003d7967d469bf9bd74fa4f3b1696
 
 name:           strip
 version:        0.0.0
