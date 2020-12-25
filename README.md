@@ -1,51 +1,50 @@
-[![Build Status](https://travis-ci.org/hspec/hspec-example.png)](https://travis-ci.org/hspec/hspec-example)
+![Build Status](https://github.com/hspec/hspec-example/workflows/build/badge.svg)
 
 # Running tests
 
-First make sure that all dependencies are installed:
+You can run your tests with `stack`, `cabal`, `ghci` or `sensei`.  All of these
+options are discussed below.
+
+**Note:** Using `stack` or `cabal` is slow.  Use `ghci` or `sensei` for a
+faster edit-compile-test cycle.
+
+## With `stack`
+
+Simply run:
 
 ```
-$ cabal install --only-dependencies --enable-tests
+$ stack test
 ```
 
-## `cabal`
+## With `cabal`
 
-Just run
-
-```
-$ cabal test
-```
-
-and return code will indicate success or failure.  However, you won't get nice
-test output.
-
-## `runhaskell`
-
-If you want nice output you can use `runhaskell`:
+First make sure that you have a recent version of `cabal-install` (you need at
+least `v3.0.0.0`:
 
 ```
-$ runhaskell -isrc -itest test/Spec.hs
+$ cabal --numeric-version
+3.2.0.0
 ```
 
-Alternatively, you can build and run the test suite manually:
+Then simply run:
 
 ```
-$ cabal configure --enable-tests --disable-optimization && cabal build && ./dist/build/spec/spec
+$ cabal test --test-show-details=direct
 ```
 
-## `ghci`
+## With `ghci`
 
-The fastest way to run your specs is with `ghci`.  Make sure that `.ghci` is
+The fastest way to run your tests is with `ghci`.  Make sure that `.ghci` is
 only writeable by you:
 
 ```
-$ chmod go-w .ghci
+$ chmod go-w . .ghci
 ```
 
-Then you can run the specs with:
+Then you can run your tests with:
 
 ```
-$ ghci test/Spec.hs
+$ cabal exec ghci test/Spec.hs
 *Main> :main
 ```
 
@@ -56,26 +55,35 @@ After modifying code use:
 *Main> :main
 ```
 
-(note that the `:reload` will be much faster than loading the code initially,
-this makes a big difference for larger projects)
+**Note:** `:reload` will be much faster than loading the code initially.  This
+makes a big difference for larger projects.
 
-## Cabal sandboxes
+## With `sensei`
 
-To use `runhaskell` or `ghci` with Cabal sandboxes, run it with `cabal exec`:
+Using [hspec/sensei](https://github.com/hspec/sensei) is similar to using
+`ghci`, but it runs your tests automatically on file modifications.  You don't
+have to invoke `:reload` and `:main` manually.
 
-```
-$ cabal exec ghci test/Spec.hs
-*Main> :main
-```
+1. Install `sensei` with
+   ```
+   $ stack install sensei
+   ```
+   or
 
-```
-$ cabal exec -- runhaskell -isrc -itest test/Spec.hs
-```
+   ```
+   $ cabal install sensei --installdir=$HOME/.local/bin
+   ```
 
-## Stack
+1. Make sure that `.ghci` is only writeable by you:
+   ```
+   $ chmod go-w . .ghci
+   ```
 
-To use `stack` to run your tests, you can simply run:
-
-```
-$ stack setup && stack test
-```
+1. Run `sensei` with
+   ```
+   $ stack exec sensei test/Spec.hs
+   ```
+   or
+   ```
+   $ cabal exec sensei test/Spec.hs
+   ```
