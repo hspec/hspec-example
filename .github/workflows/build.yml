@@ -77,3 +77,8 @@ jobs:
         run: cabal test all --test-show-details=direct
         env:
           HSPEC_OPTIONS: --color
+
+  success:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps: [run: echo success]
