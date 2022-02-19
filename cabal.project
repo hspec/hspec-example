@@ -1,5 +1,0 @@
-packages:
-  strip.cabal
-
-package strip
-  ghc-options: -Werror
