@@ -15,5 +15,5 @@ library:
 
 tests:
   spec:
-    defaults: hspec/hspec@master
+    defaults: hspec/hspec@main
     dependencies: strip
