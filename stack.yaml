@@ -1,1 +1,1 @@
-resolver: lts-16.27
+resolver: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/21/15.yaml
