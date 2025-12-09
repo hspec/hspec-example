@@ -13,3 +13,4 @@ jobs:
       - run: mcabal install hspec-discover
       - run: mcabal install "--git=https://github.com/hspec/hspec --branch=micro-hs" hspec
       - run: mcabal -r build
+      - run: dist-mcabal/bin/mhs/spec
