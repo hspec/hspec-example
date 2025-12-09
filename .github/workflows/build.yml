@@ -25,9 +25,9 @@ jobs:
           - '9.12'
         include:
           - os: macos-latest
-            ghc: latest
+            ghc: system
           - os: windows-latest
-            ghc: latest
+            ghc: system
 
     steps:
       - uses: actions/checkout@v3
