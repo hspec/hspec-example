@@ -9,8 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: sol/setup-MicroHs@nightly
+      - run: mcabal -r install "--git=https://github.com/hspec/hspec" hspec
       - run: mcabal -r install "--git=https://github.com/hspec/hspec --branch=micro-hs" --dir=hspec-core hspec-core
       - run: mcabal -r install --git=https://github.com/ekmett/exceptions exceptions
       - run: mcabal -r install --git=https://github.com/ekmett/exceptions exceptions
-      - run: mcabal -r install "--git=https://github.com/hspec/hspec" hspec
       - run: mcabal -r build
