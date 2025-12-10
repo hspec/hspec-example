@@ -25,7 +25,8 @@ library
       Paths_strip
   default-language: Haskell2010
 
-executable spec
+test-suite spec
+  type: exitcode-stdio-1.0
   main-is: Spec.hs
   hs-source-dirs:
       test
