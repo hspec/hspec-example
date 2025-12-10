@@ -16,4 +16,3 @@ jobs:
       - run: cd MicroCabal && mcabal install
       - run: hspec-discover test/Spec.hs test/Spec.hs test/Spec.hs
       - run: mcabal -r test
-      - run: dist-mcabal/bin/mhs/spec
