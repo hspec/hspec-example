@@ -9,6 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: sol/setup-MicroHs@nightly
-      - run: hspec-discover test/Spec.hs > test/Spec.hs
+      - run: hspec-discover test/Spec.hs test/Spec.hs test/Spec.hs
       - run: mcabal -r build
       - run: dist-mcabal/bin/mhs/spec
