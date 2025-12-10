@@ -9,6 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: sol/setup-MicroHs@nightly
+      - uses: actions/checkout@v4
+        with:
+          repository: sol/MicroCabal
+          path: MicroCabal
+      - run: cd MicroCabal && mcabal install
       - run: hspec-discover test/Spec.hs test/Spec.hs test/Spec.hs
-      - run: mcabal -r build
+      - run: mcabal -r test
       - run: dist-mcabal/bin/mhs/spec
